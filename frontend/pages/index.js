@@ -1,91 +1,99 @@
-import React from 'react'
-import Link from 'next/link'
-import Head from 'next/head'
-import Nav from '../components/nav'
+import Head from 'next/head';
+import React, { useState } from 'react';
+import MainLayout from '../components/MainLayout';
 
-const Home = () => (
-  <div>
-    <Head>
-      <title>Home</title>
-    </Head>
+const Home = () => {
+  const [title, setTitle] = useState('');
+  const [description, setDescription] = useState('');
+  const [projStack, setProjStack] = useState('');
+  return (
+    <MainLayout>
+      <Head>
+        <title>CodeShed Hacksurrey</title>
+      </Head>
 
-    <Nav />
-
-    <div className='hero'>
-      <h1 className='title'>Welcome to Next.js!</h1>
-      <p className='description'>
-        To get started, edit <code>pages/index.js</code> and save to reload.
-      </p>
-
-      <div className='row'>
-        <Link href='https://github.com/zeit/next.js#getting-started'>
-          <a className='card'>
-            <h3>Getting Started &rarr;</h3>
-            <p>Learn more about Next.js on GitHub and in their examples</p>
-          </a>
-        </Link>
-        <Link href='https://github.com/zeit/next.js/tree/master/examples'>
-          <a className='card'>
-            <h3>Examples &rarr;</h3>
-            <p>Find other example boilerplates on the Next.js GitHub</p>
-          </a>
-        </Link>
-        <Link href='https://github.com/zeit/next.js'>
-          <a className='card'>
-            <h3>Create Next App &rarr;</h3>
-            <p>Was this tool helpful? Let us know how we can improve it!</p>
-          </a>
-        </Link>
+      <div className="w-full pb-10">
+        <div className="bg-blue-900 w-full mt-5 py-10 px-2">
+          <p className="text-2xl font-lg text-center text-white font-bold">Welcome to CodeShed</p>
+        </div>
+        <div className="w-full max-w-4xl px-2 mx-auto">
+          <p className="text-xl my-10">
+            CodeShed is a platform that helps beginners find more experienced developers to
+            collabroate with and gain experience. Bringing together people of different or similar
+            skillsets to work on projects and ease the development process.
+          </p>
+          <p className="text-2xl mb-2">Recent Projects</p>
+          <div className="grid grid-cols-2 smallTablet:grid-cols-1">
+            {[1, 2, 3, 4, 5, 6].map((project) => {
+              return (
+                <div
+                  key={project}
+                  className="shadow p-3 flex justify-between mx-2 my-2 hover:shadow-md"
+                >
+                  <div>
+                    <p className="text-lg">Project Name</p>
+                    <p className="text-sm text-gray-500">
+                      by{' '}
+                      <a href="/user" className="underline">
+                        deltanboi
+                      </a>
+                    </p>
+                    <p className="text-sm">Machine Learning</p>
+                  </div>
+                  <div className="h-full flex flex-col justify-between">
+                    <p>3 Shedders</p>
+                    <a href="/project" className="text-blue-600 underline">
+                      Veiw Project
+                    </a>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+          <p className="text-2xl mb-2 mt-10">Post a project</p>
+          <form
+            className="p-10 w-full mx-auto shadow"
+            onSubmit={(e) => {
+              e.preventDefault();
+              console.log('Submited');
+            }}
+          >
+            <input
+              placeholder="Project Title"
+              className="w-full p-3 mb-2 rounded border border-gray-400"
+              required
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+            />
+            <textarea
+              placeholder="Project Description"
+              rows={3}
+              className="w-full p-3 rounded border border-gray-400"
+              required
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+            />
+            <select
+              placeholder="Project Stack"
+              className="w-full p-3 mb-3 rounded border border-gray-400"
+              required
+              value={projStack}
+              onChange={(e) => setProjStack(e.target.value)}
+            >
+              <option value="BACKEND DEVELOPMENT">BACKEND DEVELOPMENT</option>
+              <option value="FRONTEND DEVELOPMENT">FRONTEND DEVELOPMENT</option>
+              <option value="MOBILE DEVELOPMENT">MOBILE DEVELOPMENT</option>
+              <option value="DEVOPS">DEVOPS</option>
+              <option value="ARTIFICIAL INTELLIGENCE">ARTIFICIAL INTELLIGENCE</option>
+            </select>
+            <button className="bg-blue-900 w-full p-3 mb-2 rounded text-white" type="submit">
+              Submit
+            </button>
+          </form>
+        </div>
       </div>
-    </div>
+    </MainLayout>
+  );
+};
 
-    <style jsx>{`
-      .hero {
-        width: 100%;
-        color: #333;
-      }
-      .title {
-        margin: 0;
-        width: 100%;
-        padding-top: 80px;
-        line-height: 1.15;
-        font-size: 48px;
-      }
-      .title,
-      .description {
-        text-align: center;
-      }
-      .row {
-        max-width: 880px;
-        margin: 80px auto 40px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-      }
-      .card {
-        padding: 18px 18px 24px;
-        width: 220px;
-        text-align: left;
-        text-decoration: none;
-        color: #434343;
-        border: 1px solid #9b9b9b;
-      }
-      .card:hover {
-        border-color: #067df7;
-      }
-      .card h3 {
-        margin: 0;
-        color: #067df7;
-        font-size: 18px;
-      }
-      .card p {
-        margin: 0;
-        padding: 12px 0 0;
-        font-size: 13px;
-        color: #333;
-      }
-    `}</style>
-  </div>
-)
-
-export default Home
+export default Home;
