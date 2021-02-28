@@ -3,7 +3,7 @@ import Head from 'next/head';
 import React, { useEffect, useState } from 'react';
 import MainLayout from '../../components/MainLayout';
 
-export default function WorkPages({ user, projects, gitHubRepos }) {
+export default function User({ user, projects, gitHubRepos }) {
   const [repos, setRepos] = useState([]);
   const [currentRepoNum, setCurrentRepoNum] = useState(0);
   useEffect(() => {
