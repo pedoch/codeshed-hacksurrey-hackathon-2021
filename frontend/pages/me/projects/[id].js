@@ -37,7 +37,7 @@ function Project({ project }) {
           })}
         </div>
         <p className="font-semibold mt-10">Requests</p>
-        <div className="mb-5 text-gray-500 grid grid-cols-3">
+        <div className="mb-5 text-gray-500 grid grid-cols-3 smallTablet:grid-cols-2 phone:grid-cols-1">
           {['Ayomide', 'Tayo', 'Renny', 'Ochuko'].map((requester) => {
             return (
               <div key={requester} className="flex shadow p-3 justify-between m-1">
