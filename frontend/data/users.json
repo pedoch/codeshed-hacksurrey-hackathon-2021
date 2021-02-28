@@ -1,0 +1,22 @@
+[
+  {
+    "id": "1234",
+    "firstname": "Ochuko",
+    "lastname": "Pedro",
+    "username": "deltanboi",
+    "email": "ochped7@gmail.com",
+    "avatar_url": "https://source.unsplash.com/random",
+    "github_url": "https://github.com/pedoch",
+    "stack": ["Python", "Java", "JavaScript", "TypeScript"]
+  },
+  {
+    "id": "3214",
+    "firstname": "Tele",
+    "lastname": "Oyekunle",
+    "username": "telsss",
+    "email": "inspirational@hotmail.com",
+    "avatar_url": "https://source.unsplash.com/random",
+    "github_url": "https://github.com/TeaKG",
+    "stack": ["Python", "Java", "Ruby"]
+  }
+]

@@ -1,0 +1,12 @@
+[
+  {
+    "id": "1",
+    "title": "Neighbird",
+    "description": "You very own neighbourhood app.",
+    "status": "Active",
+    "owner_id": "1234",
+    "num_collaborators": 1,
+    "stack": ["MACHINE LEARNING"],
+    "collaborators": ["3214"]
+  }
+]
