@@ -7,7 +7,7 @@ function Project({ project }) {
       <Head>
         <title>{project.title} | CodeShed Hacksurrey</title>
       </Head>
-      <div className="w-full max-w-5xl flex mx-auto px-3 pb-10">
+      <div className="w-full max-w-5xl flex mx-auto px-3 pb-10 smallLaptop:flex-wrap">
         <div className="w-full">
           <p className="font-semibold mt-10">Title</p>
           <p className="mb-5 text-xl">{project.title}</p>
