@@ -25,7 +25,7 @@ function Project({ project }) {
         </div>
         <p className="font-semibold mt-10">Collaborators</p>
         <div className="mb-5 text-gray-500 space-x-2 text-xl">
-          {['Tele', 'Kayode', 'Rodney'].map((collab, index, arr) => {
+          {['Tele', 'Amine', 'Janice', 'Nnaji'].map((collab, index, arr) => {
             return (
               <span>
                 <a href={`/user/deltanboi`} key={collab} className="text-blue-500 underline">
