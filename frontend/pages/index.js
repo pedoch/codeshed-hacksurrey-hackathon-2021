@@ -5,7 +5,7 @@ import MainLayout from '../components/MainLayout';
 const Home = () => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
-  const [projStack, setProjStack] = useState('');
+  const [projStack, setProjStack] = useState([]);
   return (
     <MainLayout>
       <Head>
@@ -42,7 +42,7 @@ const Home = () => {
                   </div>
                   <div className="h-full flex flex-col justify-between">
                     <p>3 Shedders</p>
-                    <a href="/project" className="text-blue-600 underline">
+                    <a href="/projects/1" className="text-blue-600 underline">
                       Veiw Project
                     </a>
                   </div>
@@ -78,7 +78,11 @@ const Home = () => {
               className="w-full p-3 mb-3 rounded border border-gray-400"
               required
               value={projStack}
-              onChange={(e) => setProjStack(e.target.value)}
+              onChange={(e) => {
+                let value = Array.from(e.target.selectedOptions, (option) => option.value);
+                setProjStack(value);
+              }}
+              multiple
             >
               <option value="BACKEND DEVELOPMENT">BACKEND DEVELOPMENT</option>
               <option value="FRONTEND DEVELOPMENT">FRONTEND DEVELOPMENT</option>
