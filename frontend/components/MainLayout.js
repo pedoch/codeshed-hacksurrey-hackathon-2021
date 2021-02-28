@@ -6,6 +6,7 @@ function MainLayout({ children }) {
           CodeShed
         </a>
         <div className="text-lg flex space-x-5">
+          <a href="/me">Profile</a>
           <a href="/login">Login</a>
           <a href="/signup">Sign Up</a>
         </div>
