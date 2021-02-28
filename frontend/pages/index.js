@@ -34,7 +34,7 @@ const Home = () => {
                     <p className="text-lg">Project Name</p>
                     <p className="text-sm text-gray-500">
                       by{' '}
-                      <a href="/user" className="underline">
+                      <a href={`/user/deltanboi`} className="underline">
                         deltanboi
                       </a>
                     </p>
