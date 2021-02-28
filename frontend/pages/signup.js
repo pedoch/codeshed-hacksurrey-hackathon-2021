@@ -4,8 +4,8 @@ import MainLayout from '../components/MainLayout';
 
 function Signup() {
   const [email, setEmail] = useState('');
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
+  const [firstname, setFirstName] = useState('');
+  const [lastname, setLastName] = useState('');
   const [password, setPassword] = useState('');
   const [github, setGithub] = useState('');
   const [username, setUserName] = useState('');
@@ -29,14 +29,14 @@ function Signup() {
             placeholder="First Name"
             className="w-full p-3 mb-2 rounded border border-gray-400"
             required
-            value={firstName}
+            value={firstname}
             onChange={(e) => setFirstName(e.target.value)}
           />
           <input
             placeholder="Last Name"
             className="w-full p-3 mb-2 rounded border border-gray-400"
             required
-            value={lastName}
+            value={lastname}
             onChange={(e) => setLastName(e.target.value)}
           />
           <input
