@@ -65,7 +65,7 @@ export default function User({ user, projects, gitHubRepos }) {
                     {project.num_collaborators}{' '}
                     {project.num_collaborators > 1 ? 'Shedders' : 'Shedder'}
                   </p>
-                  <a href={`/project/${project.id}`} className="text-blue-600 underline">
+                  <a href={`/projects/${project.id}`} className="text-blue-600 underline">
                     Veiw Project
                   </a>
                 </div>
